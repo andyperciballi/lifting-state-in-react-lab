@@ -1,16 +1,18 @@
-// src/components/IngredientList/IngredientList.jsx
+// src/components/BurgerStack/BurgerStack.jsx
 
-const IngredientList = (props) => {
+const BurgerStack = (props) => {
   return (
     <div>
       <ul>
-        {props.availableIngredients.map((ingredient, index) => (
+        {props.stack.map((ingredient, index) => (
           <li
             key={index}
             style={{ backgroundColor: ingredient.color }}
           >
             {ingredient.name}
-            <button onClick={() => props.addToBurger(ingredient)}>+</button>
+            <button onClick={() => props.removeFromBurger(index)}>
+              X
+            </button>
           </li>
         ))}
       </ul>
@@ -18,4 +20,4 @@ const IngredientList = (props) => {
   );
 };
 
-export default IngredientList;
+export default BurgerStack;
